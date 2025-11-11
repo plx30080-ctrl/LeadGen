@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
-from app.api import leads, companies, contacts, jobs, search, integrations, content, routes
+from app.api import leads, companies, contacts, jobs, search, integrations, content, routes, import_tools
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -28,6 +28,7 @@ app.include_router(search.router, prefix="/api/search", tags=["Job Search"])
 app.include_router(integrations.router, prefix="/api/integrations", tags=["Integrations"])
 app.include_router(content.router, prefix="/api/content", tags=["Content Generation"])
 app.include_router(routes.router, prefix="/api/routes", tags=["Route Planning"])
+app.include_router(import_tools.router, prefix="/api/import", tags=["Manual Import (No API Required)"])
 
 
 @app.get("/")

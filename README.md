@@ -2,17 +2,32 @@
 
 A comprehensive sales lead generation application that automatically searches job boards, enriches company data, discovers contacts, and generates personalized outreach content.
 
+## ✨ Works Without Expensive APIs!
+
+**Don't have API keys?** No problem! LeadGen includes a powerful **Manual Entry** feature that lets you:
+- ✅ Manually enter job opportunities you find browsing job boards
+- ✅ Import multiple leads at once via CSV upload
+- ✅ Use FREE company enrichment from public data sources
+- ✅ Get email pattern suggestions (no API required)
+- ✅ Still use AI-powered call scripts and emails (only OpenAI key needed)
+
+**You can start generating leads immediately** - just browse Indeed, LinkedIn, or any job board manually, copy the job details, and paste them into LeadGen!
+
 ## Features
 
 ### 🔍 Job Search & Lead Generation
-- **Multi-Platform Search**: Search Indeed and ZipRecruiter simultaneously
+- **Manual Entry (No API Required)**: Add leads by hand from any job board you browse
+- **CSV Import (No API Required)**: Bulk import leads from spreadsheets
+- **Multi-Platform Search** (Optional): Search Indeed and ZipRecruiter automatically with API keys
 - **Advanced Filters**: Filter by location, keywords, job titles, industries, and more
 - **Saved Searches**: Save and reuse search criteria for recurring lead generation
 - **Automatic Lead Creation**: Jobs are automatically converted to leads with company info
 
 ### 🏢 Company & Contact Intelligence
-- **Company Enrichment**: Automatically gather company data from LinkedIn, ZoomInfo, and Apollo.io
-- **Contact Discovery**: Find decision-makers and key contacts at target companies
+- **FREE Company Enrichment**: Uses public data sources (no API required)
+- **Email Pattern Suggestions**: Common email format guessing (no API required)
+- **Premium Enrichment** (Optional): LinkedIn, ZoomInfo, and Apollo.io integration
+- **Contact Discovery** (Optional): Find decision-makers with API integrations
 - **Data Deduplication**: Intelligent memory system prevents duplicate leads
 - **Geocoding**: Automatic address geocoding for route planning
 
@@ -34,14 +49,16 @@ A comprehensive sales lead generation application that automatically searches jo
 - **Notes & Tags**: Add custom notes and tags for organization
 - **Bulk Actions**: Perform operations on multiple leads at once
 
-### 🔌 Integrations
-- **OpenAI**: AI content generation
-- **Indeed**: Job search
-- **ZipRecruiter**: Job search
-- **LinkedIn**: Company enrichment & contact discovery
-- **ZoomInfo**: B2B contact data
-- **Apollo.io**: Sales intelligence
-- **Google Maps**: Route planning
+### 🔌 Integrations (All Optional Except OpenAI for AI Features)
+- **OpenAI**: AI content generation (RECOMMENDED - needed for AI call scripts & emails)
+- **Indeed** (Optional): Automated job search
+- **ZipRecruiter** (Optional): Automated job search
+- **LinkedIn** (Optional): Company enrichment & contact discovery
+- **ZoomInfo** (Optional): B2B contact data
+- **Apollo.io** (Optional): Sales intelligence
+- **Google Maps** (Optional): Route planning
+
+**Note**: All features except AI content generation work WITHOUT any API keys using manual entry!
 
 ## Architecture
 
@@ -179,31 +196,74 @@ npm run dev
 
 ## Configuration
 
-### API Keys
+### Quick Start (Minimal Setup)
 
-#### OpenAI (Required for AI features)
+**For basic usage with manual entry:**
+1. No API keys needed at all!
+2. Just start the app and use "Manual Entry" to add leads
+3. All features work except AI content generation
+
+**For AI-powered features (Recommended):**
+1. Get OpenAI API key: https://platform.openai.com/api-keys
+2. Add to `backend/.env`: `OPENAI_API_KEY=your-key`
+3. Now you can generate personalized call scripts and emails!
+
+### Optional API Keys (Advanced Features)
+
+All of these are completely optional - the app works great without them!
+
+#### OpenAI (Recommended for AI features)
 1. Get your API key from: https://platform.openai.com/api-keys
 2. Add to `.env`: `OPENAI_API_KEY=your-key`
+3. Enables: AI-generated call scripts and personalized emails
 
-#### Indeed (Optional)
+#### Indeed (Optional - For automated job search)
 1. Register as a publisher: https://www.indeed.com/publisher
 2. Add to `.env`: `INDEED_API_KEY=your-key`
+3. Enables: Automated job board searching
 
-#### ZipRecruiter (Optional)
+#### ZipRecruiter (Optional - For automated job search)
 1. Apply for API access: https://www.ziprecruiter.com/api
 2. Add to `.env`: `ZIPRECRUITER_API_KEY=your-key`
+3. Enables: Automated job board searching
 
-#### Apollo.io (Recommended for contact discovery)
+#### Apollo.io (Optional - For premium contact discovery)
 1. Sign up and get API key: https://app.apollo.io/
 2. Add to `.env`: `APOLLO_API_KEY=your-key`
+3. Enables: Automatic contact discovery (alternative: use email pattern suggestions)
 
-#### Google Maps (Optional for route planning)
+#### LinkedIn, ZoomInfo (Optional - For premium enrichment)
+- These require enterprise accounts and are very expensive
+- Alternative: Use the built-in FREE enrichment from public data
+
+#### Google Maps (Optional - For enhanced route planning)
 1. Enable Maps API: https://developers.google.com/maps/documentation
 2. Add to `.env`: `GOOGLE_MAPS_API_KEY=your-key`
+3. Enables: Map integration (alternative: the app still calculates routes without it)
 
 ## Usage Guide
 
-### 1. Search for Jobs
+### 1A. Manual Lead Entry (No API Required - Recommended to Start!)
+
+1. Navigate to **Manual Entry** in the sidebar
+2. Browse job boards manually (Indeed, LinkedIn, ZipRecruiter, etc.)
+3. When you find an interesting job opening, copy the details
+4. Fill in the form:
+   - Company name and website
+   - Job title and description
+   - Location
+   - Contact info (if you found it)
+   - Any notes
+5. Click **Create Lead**
+6. OR: Use **CSV Upload** tab to import multiple leads at once
+
+**Pro Tips:**
+- Download the CSV template to see the format
+- Use "Suggest Emails" button to get common email patterns
+- You can find contact info on company "About" or "Contact" pages
+- Search LinkedIn for employees with relevant titles
+
+### 1B. Automated Job Search (Requires API Keys)
 
 1. Navigate to **Job Search** in the sidebar
 2. Enter your search criteria:
