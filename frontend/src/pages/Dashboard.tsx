@@ -8,6 +8,7 @@ import {
   PhoneIcon,
   EnvelopeIcon,
   MapPinIcon,
+  PencilSquareIcon,
 } from '@heroicons/react/24/outline';
 
 export default function Dashboard() {
@@ -101,7 +102,18 @@ export default function Dashboard() {
       {/* Quick Actions */}
       <div className="card mb-8">
         <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <Link
+            to="/manual"
+            className="flex items-center p-4 border-2 border-green-500 bg-green-50 rounded-lg hover:border-green-600 hover:bg-green-100 transition-colors"
+          >
+            <PencilSquareIcon className="h-8 w-8 text-green-600 mr-3" />
+            <div>
+              <h3 className="font-semibold text-gray-900">Manual Entry</h3>
+              <p className="text-sm text-green-700">No API required!</p>
+            </div>
+          </Link>
+
           <Link
             to="/search"
             className="flex items-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-colors"

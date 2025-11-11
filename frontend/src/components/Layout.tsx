@@ -3,6 +3,7 @@ import {
   HomeIcon,
   UserGroupIcon,
   MagnifyingGlassIcon,
+  PencilSquareIcon,
   BuildingOfficeIcon,
   Cog6ToothIcon,
 } from '@heroicons/react/24/outline';
@@ -15,6 +16,7 @@ const navigation = [
   { name: 'Dashboard', href: '/', icon: HomeIcon },
   { name: 'Leads', href: '/leads', icon: UserGroupIcon },
   { name: 'Job Search', href: '/search', icon: MagnifyingGlassIcon },
+  { name: 'Manual Entry', href: '/manual', icon: PencilSquareIcon },
   { name: 'Companies', href: '/companies', icon: BuildingOfficeIcon },
   { name: 'Settings', href: '/settings', icon: Cog6ToothIcon },
 ];
